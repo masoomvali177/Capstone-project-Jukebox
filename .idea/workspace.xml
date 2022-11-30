@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="created Song repository in Repository package">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlayListRepository.java" afterDir="false" />
+    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="created DatabaseService.java and JukeboxService.java in service package">
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +89,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669820258872</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="created PlayListRepository.java in Repository package">
+      <created>1669820321033</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669820321033</updated>
+    </task>
+    <task id="LOCAL-00008" summary="created DatabaseService.java and JukeboxService.java in service package">
+      <created>1669820527556</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669820527556</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -111,6 +125,8 @@
     <MESSAGE value="added attributes in play list" />
     <MESSAGE value="created Song repository in Repository" />
     <MESSAGE value="created Song repository in Repository package" />
-    <option name="LAST_COMMIT_MESSAGE" value="created Song repository in Repository package" />
+    <MESSAGE value="created PlayListRepository.java in Repository package" />
+    <MESSAGE value="created DatabaseService.java and JukeboxService.java in service package" />
+    <option name="LAST_COMMIT_MESSAGE" value="created DatabaseService.java and JukeboxService.java in service package" />
   </component>
 </project>
