@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="created DatabaseService.java and JukeboxService.java in service package">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="added junit dependency in pom.xml">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669820527556</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added junit dependency in pom.xml">
+      <created>1669820650581</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669820650581</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,6 +134,7 @@
     <MESSAGE value="created Song repository in Repository package" />
     <MESSAGE value="created PlayListRepository.java in Repository package" />
     <MESSAGE value="created DatabaseService.java and JukeboxService.java in service package" />
-    <option name="LAST_COMMIT_MESSAGE" value="created DatabaseService.java and JukeboxService.java in service package" />
+    <MESSAGE value="added junit dependency in pom.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="added junit dependency in pom.xml" />
   </component>
 </project>
