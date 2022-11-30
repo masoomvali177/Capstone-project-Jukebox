@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="added attributes in Songs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/PlayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/PlayList.java" afterDir="false" />
+    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="created Song repository in Repository package">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/PlayListRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +75,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669810701454</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added attributes in play list">
+      <created>1669819954418</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669819954418</updated>
+    </task>
+    <task id="LOCAL-00006" summary="created Song repository in Repository package">
+      <created>1669820258872</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1669820258872</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -95,6 +108,9 @@
     <MESSAGE value="created song class" />
     <MESSAGE value="created playList class in model package" />
     <MESSAGE value="added attributes in Songs" />
-    <option name="LAST_COMMIT_MESSAGE" value="added attributes in Songs" />
+    <MESSAGE value="added attributes in play list" />
+    <MESSAGE value="created Song repository in Repository" />
+    <MESSAGE value="created Song repository in Repository package" />
+    <option name="LAST_COMMIT_MESSAGE" value="created Song repository in Repository package" />
   </component>
 </project>
