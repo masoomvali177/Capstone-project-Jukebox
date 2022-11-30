@@ -85,4 +85,17 @@ public class Song {
     public void setSongPath(String songPath) {
         this.songPath = songPath;
     }
+
+    @Override
+    public String toString() {
+        return "Song{" +
+                "songId=" + songId +
+                ", songName='" + songName + '\'' +
+                ", artist='" + artist + '\'' +
+                ", songGenre='" + songGenre + '\'' +
+                ", album='" + album + '\'' +
+                ", songDuration=" + songDuration +
+                ", songPath='" + songPath + '\'' +
+                '}';
+    }
 }
