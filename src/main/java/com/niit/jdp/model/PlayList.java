@@ -10,4 +10,12 @@ public class PlayList {
     //attributes
     private int id;
     private String name;
+
+    public PlayList() {
+    }
+
+    public PlayList(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }
