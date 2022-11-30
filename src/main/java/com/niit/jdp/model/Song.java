@@ -6,6 +6,8 @@
 
 package com.niit.jdp.model;
 
+import java.util.Objects;
+
 public class Song {
 
     //attributes
@@ -97,5 +99,18 @@ public class Song {
                 ", songDuration=" + songDuration +
                 ", songPath='" + songPath + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Song)) return false;
+        Song song = (Song) o;
+        return getSongId() == song.getSongId() && Double.compare(song.getSongDuration(), getSongDuration()) == 0 && getSongName().equals(song.getSongName()) && getArtist().equals(song.getArtist()) && getSongGenre().equals(song.getSongGenre()) && getAlbum().equals(song.getAlbum()) && getSongPath().equals(song.getSongPath());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getSongId(), getSongName(), getArtist(), getSongGenre(), getAlbum(), getSongDuration(), getSongPath());
     }
 }
