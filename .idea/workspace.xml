@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="added junit dependency in pom.xml">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" afterDir="false" />
+    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="created equals() and hashCode() in PlayList.java">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/exception/InvalidArtistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/exception/InvalidGenreException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/exception/InvalidNameException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/PlayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/PlayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/DatabaseService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,19 +31,31 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2IGY0YAtY2Kl6YaTPRIVdQxZyG7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.niit.jdp.repository" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -110,7 +128,63 @@
       <option name="project" value="LOCAL" />
       <updated>1669820650581</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="create constructor in Song.java">
+      <created>1669821145900</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669821145900</updated>
+    </task>
+    <task id="LOCAL-00011" summary="create getters and setters in Song.java">
+      <created>1669821184383</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1669821184383</updated>
+    </task>
+    <task id="LOCAL-00012" summary="created toString in Song.java">
+      <created>1669821229094</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1669821229094</updated>
+    </task>
+    <task id="LOCAL-00013" summary="created equals() and hashCode() in Song.java">
+      <created>1669821321769</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1669821321769</updated>
+    </task>
+    <task id="LOCAL-00014" summary="created Constructor in PlayList.java">
+      <created>1669821422305</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669821422305</updated>
+    </task>
+    <task id="LOCAL-00015" summary="created getters and setters in PlayList.java">
+      <created>1669821468155</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1669821468155</updated>
+    </task>
+    <task id="LOCAL-00016" summary="created toString() in PlayList.java">
+      <created>1669821497806</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1669821497806</updated>
+    </task>
+    <task id="LOCAL-00017" summary="created equals() and hashCode() in PlayList.java">
+      <created>1669821538549</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1669821538549</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +209,14 @@
     <MESSAGE value="created PlayListRepository.java in Repository package" />
     <MESSAGE value="created DatabaseService.java and JukeboxService.java in service package" />
     <MESSAGE value="added junit dependency in pom.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="added junit dependency in pom.xml" />
+    <MESSAGE value="create constructor in Song.java" />
+    <MESSAGE value="create getters and setters in Song.java" />
+    <MESSAGE value="created toString in Song.java" />
+    <MESSAGE value="created equals() and hashCode() in Song.java" />
+    <MESSAGE value="created Constructor in PlayList.java" />
+    <MESSAGE value="created getters and setters in PlayList.java" />
+    <MESSAGE value="created toString() in PlayList.java" />
+    <MESSAGE value="created equals() and hashCode() in PlayList.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="created equals() and hashCode() in PlayList.java" />
   </component>
 </project>

@@ -10,38 +10,39 @@ import java.util.Objects;
 
 public class PlayList {
     //attributes
-    private int id;
-    private String name;
+    private int playlistId;
+    private String playlistName;
+
 
     public PlayList() {
     }
 
-    public PlayList(int id, String name) {
-        this.id = id;
-        this.name = name;
+    public PlayList(int playlistId, String playlistName) {
+        this.playlistId = playlistId;
+        this.playlistName = playlistName;
     }
 
-    public int getId() {
-        return id;
+    public int getPlaylistId() {
+        return playlistId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setPlaylistId(int playlistId) {
+        this.playlistId = playlistId;
     }
 
-    public String getName() {
-        return name;
+    public String getPlaylistName() {
+        return playlistName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPlaylistName(String playlistName) {
+        this.playlistName = playlistName;
     }
 
     @Override
     public String toString() {
         return "PlayList{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "id=" + playlistId +
+                ", name='" + playlistName + '\'' +
                 '}';
     }
 
@@ -50,11 +51,11 @@ public class PlayList {
         if (this == o) return true;
         if (!(o instanceof PlayList)) return false;
         PlayList playList = (PlayList) o;
-        return getId() == playList.getId() && getName().equals(playList.getName());
+        return getPlaylistId() == playList.getPlaylistId() && getPlaylistName().equals(playList.getPlaylistName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName());
+        return Objects.hash(getPlaylistId(), getPlaylistName());
     }
 }
