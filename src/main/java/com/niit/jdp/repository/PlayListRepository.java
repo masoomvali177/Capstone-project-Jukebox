@@ -11,10 +11,7 @@ import com.niit.jdp.model.PlayList;
 import com.niit.jdp.model.Song;
 import com.niit.jdp.service.DatabaseService;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -29,7 +26,7 @@ public class PlayListRepository {
         databaseService = new DatabaseService();
         connection = databaseService.getConnectionDatabase();
     }
-    public void createPlaylist() {
+    public void createPlaylist(PlayList playList) {
         String playlistName=scanner.nextLine();
         String query="insert into `jukebox`.`playlist`(playlistName) values (?)";
         try(PreparedStatement preparedStatement=connection.prepareStatement(query)){
@@ -41,6 +38,20 @@ public class PlayListRepository {
         }
 
 
+    }
+    public void addSongsToPlayList(){
+        String query="select playlistId,playlistName from playlist";
+        try(Statement statement=connection.createStatement()){
+            ResultSet resultSet = statement.executeQuery(query);
+                System.out.println("");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void insertIntoPlayList(PlayList playList)throws SQLException,ClassNotFoundException{
+        int rows;
+        String sql="insert into playlist";
     }
 
 
