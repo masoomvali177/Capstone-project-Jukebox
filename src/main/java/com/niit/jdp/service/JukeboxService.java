@@ -28,6 +28,14 @@ public class JukeboxService {
         }
     }
 
+    public void stop(){
+        try {
+            Clip clip=AudioSystem.getClip();
+            clip.stop();
 
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 }
