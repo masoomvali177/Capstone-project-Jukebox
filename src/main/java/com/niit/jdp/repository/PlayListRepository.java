@@ -26,42 +26,67 @@ public class PlayListRepository {
         databaseService = new DatabaseService();
         connection = databaseService.getConnectionDatabase();
     }
-    public void createPlaylist(PlayList playList) {
-        String playlistName=scanner.nextLine();
-        String query="insert into `jukebox`.`playlist`(playlistName) values (?)";
+    public PlayList createPlaylist(String playlistName) {
+        PlayList playlist = new PlayList();
+        String insertQuery = "insert into `jukebox`.`playlist` (`playlistName`) values (?);";
+        try(PreparedStatement statement = connection.prepareStatement(insertQuery, PreparedStatement.RETURN_GENERATED_KEYS)) {
+            statement.setString(1, playlistName);
+            int result = statement.executeUpdate();
+            if (result > 0) {
+                ResultSet keys = statement.getGeneratedKeys();
+                if (keys.next()) {
+                    playlist.setPlaylistId(keys.getInt(1));
+                    playlist.setPlaylistName(playlistName);
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return playlist;
+
+
+    }
+    public boolean addSongsToPlayList(int playlistId,String songIds){
+        int result=0;
+        String query="update jukebox.playlist set songids= ? where playlistid =?;";
         try(PreparedStatement preparedStatement=connection.prepareStatement(query)){
-            preparedStatement.setString(1,playlistName);
-            preparedStatement.executeUpdate();
-
+            preparedStatement.setString(1,songIds);
+            preparedStatement.setInt(2,playlistId);
+            result=preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-
+        return result>0;
     }
-    public void addSongsToPlayList(){
-        String query="select playlistId,playlistName from playlist";
-        try(Statement statement=connection.createStatement()){
-            ResultSet resultSet = statement.executeQuery(query);
-                System.out.println("");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+    public List<Song> getSongsFromPlaylist(int playlistId) throws SQLException, ClassNotFoundException {
+        List<Song> songs = new ArrayList<>();
+        String query = "select * from `jukebox`.`playlist` where `playlistId` = ?;";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setInt(1, playlistId);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+            String songIds = resultSet.getString("songIds");
+            String[] songIdArray = songIds.split(",");
+            for (String songId : songIdArray) {
+                Song song = new SongRepository().getSongById(Integer.parseInt(songId));
+                songs.add(song);
+            }
         }
+        return songs;
     }
+    public int getPlaylistIdByName(String PlaylistName) throws SQLException {
+        int playlistId=0;
+        String query = "select * from `jukebox`.`playlist` where `playlistName` = ?;";
+        PreparedStatement statement = connection.prepareStatement(query);
+        statement.setString(1, "playlistName");
+        ResultSet resultSet= statement.executeQuery();
+        while (resultSet.next()) {
+             playlistId = resultSet.getInt("playlistId");
 
-    public void insertIntoPlayList(PlayList playList)throws SQLException,ClassNotFoundException{
-        int rows;
-        String sql="insert into playlist";
+        }
+
+        return playlistId;
     }
-
-
-
-
-
-
-
-
-
 
 
 }

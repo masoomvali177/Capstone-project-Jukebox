@@ -32,6 +32,15 @@ public class Song {
         this.songPath = songPath;
     }
 
+    public Song(int songId, String songName, String artist, String songGenre, String album, double songDuration) {
+        this.songId = songId;
+        this.songName = songName;
+        this.artist = artist;
+        this.songGenre = songGenre;
+        this.album = album;
+        this.songDuration = songDuration;
+    }
+
     public int getSongId() {
         return songId;
     }

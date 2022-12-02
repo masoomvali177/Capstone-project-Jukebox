@@ -21,6 +21,8 @@ public class SongRepository {
     Connection connection;
     DatabaseService databaseService;
 
+    List<Song> songs=new ArrayList<>();
+
     public  SongRepository() throws SQLException, ClassNotFoundException {
         databaseService = new DatabaseService();
         connection = databaseService.getConnectionDatabase();
@@ -38,8 +40,8 @@ public class SongRepository {
                 String songGenre = resultSet.getString("songGenre");
                 String album = resultSet.getString("album");
                 Double songDuration = resultSet.getDouble("songDuration");
-                String songPath = resultSet.getString("songPath");
-                Song song = new Song(songId, songName, artist, songGenre, album, songDuration, songPath);
+                String songPath=resultSet.getString("songPath");
+                Song song = new Song(songId, songName, artist, songGenre, album, songDuration,songPath);
                 songs.add(song);
 
             }
@@ -48,6 +50,23 @@ public class SongRepository {
             throw new RuntimeException(e);
         }
         return songs;
+    }
+    public Song getSongById(int songId) throws SQLException {
+        Song song = new Song();
+        String selectQuery = "select * from `jukebox`.`songs` where `songId` = ?;";
+        PreparedStatement statement = connection.prepareStatement(selectQuery);
+        statement.setInt(1, songId);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+            song.setSongId(resultSet.getInt("songId"));
+            song.setSongName(resultSet.getString("songName"));
+            song.setArtist(resultSet.getString("artist"));
+            song.setAlbum(resultSet.getString("album"));
+            song.setSongGenre(resultSet.getString("songGenre"));
+            song.setSongDuration(resultSet.getDouble("songDuration"));
+            song.setSongPath(resultSet.getString("songPath"));
+        }
+        return song;
     }
     public List<Song> searchByArtist(String artist)throws InvalidArtistException {
         List<Song> songs = new ArrayList<>();
@@ -66,8 +85,7 @@ public class SongRepository {
                 String songGenre = resultSet.getString("songGenre");
                 String album = resultSet.getString("album");
                 Double songDuration = resultSet.getDouble("songDuration");
-                String songPath = resultSet.getString("songPath");
-                Song song = new Song(songId, songName, songArtist, songGenre, album, songDuration, songPath);
+                Song song = new Song(songId, songName, songArtist, songGenre, album, songDuration);
                 songs.add(song);
             }
 
@@ -95,8 +113,7 @@ public class SongRepository {
                 String Genre = resultSet.getString("songGenre");
                 String album = resultSet.getString("album");
                 Double songDuration = resultSet.getDouble("songDuration");
-                String songPath = resultSet.getString("songPath");
-                Song song = new Song(songId, songName, songArtist, Genre, album, songDuration, songPath);
+                Song song = new Song(songId, songName, songArtist, Genre, album, songDuration);
                 songs.add(song);
             }
 
@@ -124,8 +141,7 @@ public class SongRepository {
                 String Genre = resultSet.getString("songGenre");
                 String album = resultSet.getString("album");
                 Double songDuration = resultSet.getDouble("songDuration");
-                String songPath = resultSet.getString("songPath");
-                Song song = new Song(songId, name, songArtist, Genre, album, songDuration, songPath);
+                Song song = new Song(songId, name, songArtist, Genre, album, songDuration);
                 songs.add(song);
             }
 
@@ -149,8 +165,7 @@ public class SongRepository {
                 String Genre = resultSet.getString("songGenre");
                 String albums = resultSet.getString("album");
                 Double songDuration = resultSet.getDouble("songDuration");
-                String songPath = resultSet.getString("songPath");
-                Song song = new Song(songId, name, songArtist, Genre, albums, songDuration, songPath);
+                Song song = new Song(songId, name, songArtist, Genre, albums, songDuration);
                 songs.add(song);
             }
 

@@ -6,13 +6,22 @@
 
 package com.niit.jdp.model;
 
+import java.util.List;
 import java.util.Objects;
 
 public class PlayList {
     //attributes
     private int playlistId;
     private String playlistName;
+    private List<Song> songs;
 
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<Song> songs) {
+        this.songs = songs;
+    }
 
     public PlayList() {
     }
