@@ -5,6 +5,7 @@
  */
 
 import com.niit.jdp.exception.InvalidArtistException;
+import com.niit.jdp.exception.InvalidNameException;
 import com.niit.jdp.model.Song;
 import com.niit.jdp.repository.PlayListRepository;
 import com.niit.jdp.repository.SongRepository;
@@ -96,6 +97,36 @@ public class Jukeboxtest {
 
 
         List<Song> actualOutput = songRepository.searchByArtist("keravani");
+        //assert
+        Assert.assertNotEquals(expectedOutput, actualOutput);
+
+    }
+    @Test
+    public void displayAllSongsByNameSuccess() throws InvalidArtistException, SQLException, InvalidNameException {
+        //act
+        Song song1 = new Song(1, "dosti", "keravani", "dance", "rrr", 04.00, "src/main/resources/songs/Dosti.wav");
+
+        //act
+        List<Song> expectedOutput = new ArrayList<>();
+        expectedOutput.add(song1);
+
+
+        List<Song> actualOutput = songRepository.searchByName("dosti");
+        //assert
+        Assert.assertEquals(expectedOutput, actualOutput);
+
+    }
+    @Test
+    public void displayAllSongsByNameFailure() throws InvalidArtistException, SQLException, InvalidNameException {
+        //act
+        Song song1 = new Song(1, "dosti", "keravani", "dance", "rrr", 04.00, "src/main/resources/songs/Dosti.wav");
+
+        //act
+        List<Song> expectedOutput = new ArrayList<>();
+        expectedOutput.add(song1);
+
+
+        List<Song> actualOutput = songRepository.searchByName("100 days");
         //assert
         Assert.assertNotEquals(expectedOutput, actualOutput);
 

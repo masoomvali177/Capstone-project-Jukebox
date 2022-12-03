@@ -132,6 +132,7 @@ public class SongRepository {
                 song.setAlbum(resultSet.getString("album"));
                 song.setArtist(resultSet.getString("artist"));
                 song.setSongDuration(resultSet.getDouble("songDuration"));
+                song.setSongPath(resultSet.getString("songPath"));
             }
             songs.add(song);
 

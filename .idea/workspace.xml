@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="added stop method in jukebox service">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/100 days.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/songs/lonely.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Jukeboxtest.java" afterDir="false" />
+    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="test cases for search by artist method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/JukeboxService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/JukeboxService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/songs/Natu-Natu(PagalWorld).wav" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/songs/Natu-Natu.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Jukeboxtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Jukeboxtest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,20 +59,7 @@
       <recent name="C:\Users\masoo\IdeaProjects\Capstone-project-Jukebox\src\main\resources\songs" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="JukeboxService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.niit.jdp.service.JukeboxService" />
-      <module name="Capstone-project-Jukebox" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.niit.jdp.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.Jukeboxtest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.niit.jdp.Main" />
       <module name="Capstone-project-Jukebox" />
@@ -101,16 +82,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Jukeboxtest.displayAllSongsByArtistSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Capstone-project-Jukebox" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Jukeboxtest" />
-      <option name="METHOD_NAME" value="displayAllSongsByArtistSuccess" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Jukeboxtest.displayAllSongsByArtistfailure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Capstone-project-Jukebox" />
       <option name="PACKAGE_NAME" value="" />
@@ -121,13 +92,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Jukeboxtest.displayAllSongsByNameFailure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Capstone-project-Jukebox" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Jukeboxtest" />
+      <option name="METHOD_NAME" value="displayAllSongsByNameFailure" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Jukeboxtest.displayAllSongsByNameSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Capstone-project-Jukebox" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Jukeboxtest" />
+      <option name="METHOD_NAME" value="displayAllSongsByNameSuccess" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Jukeboxtest" />
+        <item itemvalue="JUnit.Jukeboxtest.displayAllSongsByNameFailure" />
+        <item itemvalue="JUnit.Jukeboxtest.displayAllSongsByNameSuccess" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.Jukeboxtest.displayAllSongsByArtistfailure" />
-        <item itemvalue="JUnit.Jukeboxtest.displayAllSongsByArtistSuccess" />
-        <item itemvalue="JUnit.Jukeboxtest" />
-        <item itemvalue="Application.JukeboxService" />
       </list>
     </recent_temporary>
   </component>
@@ -294,7 +285,21 @@
       <option name="project" value="LOCAL" />
       <updated>1669962671273</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="test cases for displaying all songs">
+      <created>1670057638833</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1670057638834</updated>
+    </task>
+    <task id="LOCAL-00024" summary="test cases for search by artist method">
+      <created>1670057694025</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1670057694025</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -332,6 +337,8 @@
     <MESSAGE value="play method code is written in service package" />
     <MESSAGE value="added playlist operation method in main method" />
     <MESSAGE value="added stop method in jukebox service" />
-    <option name="LAST_COMMIT_MESSAGE" value="added stop method in jukebox service" />
+    <MESSAGE value="test cases for displaying all songs" />
+    <MESSAGE value="test cases for search by artist method" />
+    <option name="LAST_COMMIT_MESSAGE" value="test cases for search by artist method" />
   </component>
 </project>
