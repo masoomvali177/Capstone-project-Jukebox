@@ -69,6 +69,38 @@ public class Jukeboxtest {
         assertNotEquals(expectedOutput, actualOutput.get(0));
 
     }
+    @Test
+    public void displayAllSongsByArtistSuccess() throws InvalidArtistException, SQLException {
+        //act
+        Song song1 = new Song(1, "dosti", "keravani", "dance", "rrr", 04.00, "src/main/resources/songs/Dosti.wav");
+
+        //act
+        List<Song> expectedOutput = new ArrayList<>();
+        expectedOutput.add(song1);
+
+
+        List<Song> actualOutput = songRepository.searchByArtist("keravani");
+        //assert
+        Assert.assertEquals(expectedOutput, actualOutput);
+
+    }
+
+    @Test
+    public void displayAllSongsByArtistfailure() throws InvalidArtistException, SQLException {
+        //act
+        Song song1 = new Song(1, "natu natu", "akon", "dance", "rrr", 04.00, "src/main/resources/songs/Dosti.wav");
+
+        //act
+        List<Song> expectedOutput = new ArrayList<>();
+        expectedOutput.add(song1);
+
+
+        List<Song> actualOutput = songRepository.searchByArtist("keravani");
+        //assert
+        Assert.assertNotEquals(expectedOutput, actualOutput);
+
+    }
+
 
 
 }
