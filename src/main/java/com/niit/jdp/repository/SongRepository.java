@@ -68,87 +68,73 @@ public class SongRepository {
         }
         return song;
     }
-    public List<Song> searchByArtist(String artist)throws InvalidArtistException {
-        List<Song> songs = new ArrayList<>();
+    public List<Song> searchByArtist(String artist) throws InvalidArtistException, SQLException {
         if(artist==null){
             throw new InvalidArtistException("Given Artist name is Invalid");
         }
-        String query = "SELECT * FROM `JUKEBOX`.`SONGS` WHERE (`ARTIST` = ?);";
-        try (PreparedStatement preparedstatement = connection.prepareStatement(query)) {
-
-            preparedstatement.setString(1, artist);
-            ResultSet resultSet = preparedstatement.executeQuery(query);
-            while (resultSet.next()) {
-                int songId = resultSet.getInt("songId");
-                String songName = resultSet.getString("songName");
-                String songArtist = resultSet.getString("artist");
-                String songGenre = resultSet.getString("songGenre");
-                String album = resultSet.getString("album");
-                Double songDuration = resultSet.getDouble("songDuration");
-                Song song = new Song(songId, songName, songArtist, songGenre, album, songDuration);
-                songs.add(song);
-            }
-
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        List<Song> songs = new ArrayList<>();
+        Song song=new Song();
+        String selectQuery = "select * from `jukebox`.`songs` where `artist` = ?;";
+        PreparedStatement statement = connection.prepareStatement(selectQuery);
+        statement.setString(1, artist);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+            song.setSongId(resultSet.getInt("songId"));
+            song.setSongName(resultSet.getString("songName"));
+            song.setSongGenre(resultSet.getString("songGenre"));
+            song.setAlbum(resultSet.getString("album"));
+            song.setArtist(resultSet.getString("artist"));
+            song.setSongDuration(resultSet.getDouble("songDuration"));
+            song.setSongPath(resultSet.getString("songPath"));
         }
+        songs.add(song);
+
         return songs;
     }
-    public List<Song> searchByGenre(String songGenre)throws InvalidGenreException {
+    public List<Song> searchByGenre(String songGenre) throws InvalidGenreException, SQLException {
         if(songGenre==null){
             throw new InvalidGenreException("Given Genre name is Invalid");
-
         }
         List<Song> songs = new ArrayList<>();
-        String query = "SELECT * FROM `JUKEBOX`.`SONGS` WHERE (`SONGGENRE` = ?);";
-        try (PreparedStatement preparedstatement = connection.prepareStatement(query)) {
-
-            preparedstatement.setString(1, songGenre);
-            ResultSet resultSet = preparedstatement.executeQuery(query);
-            while (resultSet.next()) {
-                int songId = resultSet.getInt("songId");
-                String songName = resultSet.getString("songName");
-                String songArtist = resultSet.getString("artist");
-                String Genre = resultSet.getString("songGenre");
-                String album = resultSet.getString("album");
-                Double songDuration = resultSet.getDouble("songDuration");
-                Song song = new Song(songId, songName, songArtist, Genre, album, songDuration);
-                songs.add(song);
-            }
-
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        Song song=new Song();
+        String selectQuery = "select * from `jukebox`.`songs` where `songGenre` = ?;";
+        PreparedStatement statement = connection.prepareStatement(selectQuery);
+        statement.setString(1, songGenre);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()) {
+            song.setSongId(resultSet.getInt("songId"));
+            song.setSongName(resultSet.getString("songName"));
+            song.setSongGenre(resultSet.getString("songGenre"));
+            song.setAlbum(resultSet.getString("album"));
+            song.setArtist(resultSet.getString("artist"));
+            song.setSongDuration(resultSet.getDouble("songDuration"));
+            song.setSongPath(resultSet.getString("songPath"));
         }
+        songs.add(song);
+
         return songs;
     }
-    public List<Song> searchByName(String songName) throws InvalidNameException {
+        public List<Song> searchByName(String songName) throws InvalidNameException, SQLException {
         if(songName==null){
             throw new InvalidNameException("Given Song name is Invalid");
 
         }
-        List<Song> songs = new ArrayList<>();
-        String query = "SELECT * FROM `JUKEBOX`.`SONGS` WHERE (`SONGNAME` = ?);";
-        try (PreparedStatement preparedstatement = connection.prepareStatement(query)) {
-
-            preparedstatement.setString(1, songName);
-            ResultSet resultSet = preparedstatement.executeQuery(query);
+            List<Song> songs = new ArrayList<>();
+            Song song=new Song();
+            String selectQuery = "select * from `jukebox`.`songs` where `songName` = ?;";
+            PreparedStatement statement = connection.prepareStatement(selectQuery);
+            statement.setString(1, songName);
+            ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
-                int songId = resultSet.getInt("songId");
-                String name = resultSet.getString("songName");
-                String songArtist = resultSet.getString("artist");
-                String Genre = resultSet.getString("songGenre");
-                String album = resultSet.getString("album");
-                Double songDuration = resultSet.getDouble("songDuration");
-                Song song = new Song(songId, name, songArtist, Genre, album, songDuration);
-                songs.add(song);
+                song.setSongId(resultSet.getInt("songId"));
+                song.setSongName(resultSet.getString("songName"));
+                song.setSongGenre(resultSet.getString("songGenre"));
+                song.setAlbum(resultSet.getString("album"));
+                song.setArtist(resultSet.getString("artist"));
+                song.setSongDuration(resultSet.getDouble("songDuration"));
             }
+            songs.add(song);
 
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
         return songs;
     }
     public List<Song> searchByAlbum(String album) {
