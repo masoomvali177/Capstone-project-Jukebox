@@ -6,7 +6,9 @@
 
 import com.niit.jdp.model.Song;
 import com.niit.jdp.repository.PlayListRepository;
+import com.niit.jdp.model.PlayList;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -34,5 +36,16 @@ public class PlayListRepositoryTest {
         List<Song> actualOutput= playListRepository.getSongsFromPlaylist(3);
         //assert
         assertEquals(1,actualOutput.get(0).getSongId());
+    }
+    @Test
+    public void displayAllPlaylist() throws SQLException {
+        List<PlayList> playlists = playListRepository.getAllPlayList();
+        Assertions.assertEquals(22, playlists.size());
+    }
+
+    @Test
+    public void displayAllPlaylistFailure() throws SQLException {
+        List<PlayList> playlists = playListRepository.getAllPlayList();
+        assertNotEquals(4, playlists.size());
     }
 }
