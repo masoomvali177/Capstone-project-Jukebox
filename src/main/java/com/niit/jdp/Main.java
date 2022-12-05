@@ -27,12 +27,12 @@ public class Main {
         System.out.println("\n=============================================");
             do {
                 System.out.println("\nChoose the option Between 1 to 7");
-                System.out.println("1. Name of song");
-                System.out.println("2. Genre of song");
-                System.out.println("3. Artist of song");
+                System.out.println("1. Search Song By Name");
+                System.out.println("2. Search Song By Genre");
+                System.out.println("3. Search Song By Artist");
                 System.out.println("4. View song list");
-                System.out.println("5. Create or view or add songs in playlist");
-                System.out.println("6. Jukebox operations");
+                System.out.println("5. Playlist Operations ");
+                System.out.println("6. Jukebox Operations");
                 System.out.println("7. Exit");
                 System.out.println("\nEnter choice: ");
                 System.out.println("\n=============================================");
@@ -234,35 +234,6 @@ public class Main {
     }
 
 
-       /* try {
-            songRepository.displayAllSongs().forEach(System.out::println);
-            System.out.println("enter the name of the playlist to be created: ");
-            String playlistName = scanner.nextLine();
-            PlayList playlist = playlistRepository.createPlaylist(playlistName);
-            System.out.println("Your playlist has been created with id: " + playlist.getPlaylistId());
-            System.out.println("Enter the playlist id to add songs to: ");
-            int playlistId = scanner.nextInt();
-            scanner.nextLine();
-            System.out.println("Enter the song ids to add to the playlist separated by comma: ");
-            String songIds = scanner.nextLine();
-            boolean songsAdded = playlistRepository.addSongsToPlayList(playlistId, songIds);
-            if(songsAdded) {
-                System.out.println("Songs added to the playlist");
-            }
-            else{
-                System.out.println("Something went wrong");
-            }
-            System.out.println("Enter the playlist id to get songs from: ");
-            int playlistIdToGetSongsFrom = scanner.nextInt();
-            List<Song> songsFromPlaylist = playlistRepository.getSongsFromPlaylist(playlistIdToGetSongsFrom);
-            for (Song song : songsFromPlaylist) {
-
-                System.out.println(song);
-            }
-        }
-        catch (SQLException e) {
-            e.printStackTrace();
-        }*/
 
 }
 

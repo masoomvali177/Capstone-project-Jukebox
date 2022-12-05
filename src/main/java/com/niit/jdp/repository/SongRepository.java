@@ -8,6 +8,7 @@ package com.niit.jdp.repository;
 
 import com.niit.jdp.exception.InvalidArtistException;
 import com.niit.jdp.exception.InvalidGenreException;
+import com.niit.jdp.exception.InvalidIdException;
 import com.niit.jdp.exception.InvalidNameException;
 import com.niit.jdp.model.Song;
 import com.niit.jdp.service.DatabaseService;
@@ -65,6 +66,9 @@ public class SongRepository {
                 song.setSongGenre(resultSet.getString("songGenre"));
                 song.setSongDuration(resultSet.getDouble("songDuration"));
                 song.setSongPath(resultSet.getString("songPath"));
+            }
+            if(song==null){
+                throw new InvalidIdException("Given id is invalid");
             }
         }catch(Exception exception){
             exception.printStackTrace();
