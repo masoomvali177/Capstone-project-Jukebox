@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="added exception for each method in song repository">
+    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="added sql file to intellij">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Jukeboxtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SongRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +59,7 @@
       <recent name="C:\Users\masoo\IdeaProjects\Capstone-project-Jukebox\src\main\resources\songs" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.PlayListRepositoryTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.niit.jdp.Main" />
       <module name="Capstone-project-Jukebox" />
@@ -72,39 +73,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Jukeboxtest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PlayListRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Capstone-project-Jukebox" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Jukeboxtest" />
+      <option name="MAIN_CLASS_NAME" value="PlayListRepositoryTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Jukeboxtest.displayAllSongsByNameFailure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SongRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Capstone-project-Jukebox" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Jukeboxtest" />
-      <option name="METHOD_NAME" value="displayAllSongsByNameFailure" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="SongRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Jukeboxtest.getSongsFromPlaylistFailure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SongRepositoryTest.getSongsFromPlaylistFailure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Capstone-project-Jukebox" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Jukeboxtest" />
+      <option name="MAIN_CLASS_NAME" value="SongRepositoryTest" />
       <option name="METHOD_NAME" value="getSongsFromPlaylistFailure" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Jukeboxtest.getSongsFromPlaylistSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SongRepositoryTest.getSongsFromPlaylistSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Capstone-project-Jukebox" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="Jukeboxtest" />
+      <option name="MAIN_CLASS_NAME" value="SongRepositoryTest" />
       <option name="METHOD_NAME" value="getSongsFromPlaylistSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -113,11 +113,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayListRepositoryTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.Jukeboxtest.getSongsFromPlaylistFailure" />
-        <item itemvalue="JUnit.Jukeboxtest.getSongsFromPlaylistSuccess" />
-        <item itemvalue="JUnit.Jukeboxtest" />
-        <item itemvalue="JUnit.Jukeboxtest.displayAllSongsByNameFailure" />
+        <item itemvalue="JUnit.SongRepositoryTest.getSongsFromPlaylistFailure" />
+        <item itemvalue="JUnit.SongRepositoryTest.getSongsFromPlaylistSuccess" />
+        <item itemvalue="JUnit.SongRepositoryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -347,7 +347,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670251354084</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="added sql file to intellij">
+      <created>1670252246923</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1670252246923</updated>
+    </task>
+    <task id="LOCAL-00033" summary="added sql file to intellij">
+      <created>1670252303915</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1670252303915</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -362,7 +376,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="created PlayListRepository.java in Repository package" />
     <MESSAGE value="created DatabaseService.java and JukeboxService.java in service package" />
     <MESSAGE value="added junit dependency in pom.xml" />
     <MESSAGE value="create constructor in Song.java" />
@@ -387,6 +400,7 @@
     <MESSAGE value="added get all playlist method in playlist repository" />
     <MESSAGE value="added invalid id exception in exception package" />
     <MESSAGE value="added exception for each method in song repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="added exception for each method in song repository" />
+    <MESSAGE value="added sql file to intellij" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sql file to intellij" />
   </component>
 </project>
