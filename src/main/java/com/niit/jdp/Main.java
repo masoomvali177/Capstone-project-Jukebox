@@ -134,6 +134,7 @@ public class Main {
                     System.out.println("================================");
                     System.out.println("Enter the playlist id to get songs from: ");
                     int playlistIdToGetSongsFrom = scanner.nextInt();
+                    System.out.println(String.format("%s\t%-25s\t\t%-15s\t%-25s\t%-25s\t%-25s","SONG ID","SONG NAME","SONG DURATION","SONG GENRE","ARTIST","ALBUM"));
                     List<Song> songsFromPlaylist = playlistRepository.getSongsFromPlaylist(playlistIdToGetSongsFrom);
                     for (Song song : songsFromPlaylist) {
 

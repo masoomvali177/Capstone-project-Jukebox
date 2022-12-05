@@ -39,8 +39,8 @@ public class PlayListRepository {
                     playlist.setPlaylistName(playlistName);
                 }
             }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        } catch (SQLException exception) {
+            throw new RuntimeException(exception);
         }
         return playlist;
 
@@ -53,39 +53,53 @@ public class PlayListRepository {
             preparedStatement.setString(1,songIds);
             preparedStatement.setInt(2,playlistId);
             result=preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        } catch (SQLException exception) {
+            throw new RuntimeException(exception);
         }
         return result>0;
     }
     public List<Song> getSongsFromPlaylist(int playlistId) throws SQLException, ClassNotFoundException {
         List<Song> songs = new ArrayList<>();
         String query = "select * from `jukebox`.`playlist` where `playlistId` = ?;";
-        PreparedStatement statement = connection.prepareStatement(query);
-        statement.setInt(1, playlistId);
-        ResultSet resultSet = statement.executeQuery();
-        while (resultSet.next()) {
-            String songIds = resultSet.getString("songIds");
-            String[] songIdArray = songIds.split(",");
-            for (String songId : songIdArray) {
-                Song song = new SongRepository().getSongById(Integer.parseInt(songId));
-                songs.add(song);
+        try(PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setInt(1, playlistId);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                String songIds = resultSet.getString("songIds");
+                String[] songIdArray = songIds.split(",");
+                for (String songId : songIdArray) {
+                    Song song = new SongRepository().getSongById(Integer.parseInt(songId));
+                    songs.add(song);
+                }
             }
+
+        }catch(Exception exception){
+            exception.printStackTrace();
         }
         return songs;
     }
     public int getPlaylistIdByName(String PlaylistName) throws SQLException {
         int playlistId=0;
         String query = "select * from `jukebox`.`playlist` where `playlistName` = ?;";
-        PreparedStatement statement = connection.prepareStatement(query);
-        statement.setString(1, "playlistName");
-        ResultSet resultSet= statement.executeQuery();
-        while (resultSet.next()) {
-             playlistId = resultSet.getInt("playlistId");
+        try(PreparedStatement statement = connection.prepareStatement(query);) {
+            statement.setString(1, "playlistName");
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                playlistId = resultSet.getInt("playlistId");
+            }
+        }catch(Exception exception){
+            exception.printStackTrace();
+        }
+        return playlistId;
+    }
+
+    public List<PlayList> getAllPlayList( ) throws SQLException {
+        List<PlayList> playLists=new ArrayList<>();
+        String query="select * from `jukebox`.`playlist`;";
+        try(Statement statement=connection.createStatement()){
 
         }
-
-        return playlistId;
+        return playLists;
     }
 
 

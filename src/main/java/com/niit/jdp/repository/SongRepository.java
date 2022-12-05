@@ -54,17 +54,20 @@ public class SongRepository {
     public Song getSongById(int songId) throws SQLException {
         Song song = new Song();
         String selectQuery = "select * from `jukebox`.`songs` where `songId` = ?;";
-        PreparedStatement statement = connection.prepareStatement(selectQuery);
-        statement.setInt(1, songId);
-        ResultSet resultSet = statement.executeQuery();
-        while (resultSet.next()) {
-            song.setSongId(resultSet.getInt("songId"));
-            song.setSongName(resultSet.getString("songName"));
-            song.setArtist(resultSet.getString("artist"));
-            song.setAlbum(resultSet.getString("album"));
-            song.setSongGenre(resultSet.getString("songGenre"));
-            song.setSongDuration(resultSet.getDouble("songDuration"));
-            song.setSongPath(resultSet.getString("songPath"));
+        try(PreparedStatement statement = connection.prepareStatement(selectQuery)) {
+            statement.setInt(1, songId);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                song.setSongId(resultSet.getInt("songId"));
+                song.setSongName(resultSet.getString("songName"));
+                song.setArtist(resultSet.getString("artist"));
+                song.setAlbum(resultSet.getString("album"));
+                song.setSongGenre(resultSet.getString("songGenre"));
+                song.setSongDuration(resultSet.getDouble("songDuration"));
+                song.setSongPath(resultSet.getString("songPath"));
+            }
+        }catch(Exception exception){
+            exception.printStackTrace();
         }
         return song;
     }
@@ -75,55 +78,8 @@ public class SongRepository {
         List<Song> songs = new ArrayList<>();
         Song song=new Song();
         String selectQuery = "select * from `jukebox`.`songs` where `artist` = ?;";
-        PreparedStatement statement = connection.prepareStatement(selectQuery);
-        statement.setString(1, artist);
-        ResultSet resultSet = statement.executeQuery();
-        while (resultSet.next()) {
-            song.setSongId(resultSet.getInt("songId"));
-            song.setSongName(resultSet.getString("songName"));
-            song.setSongGenre(resultSet.getString("songGenre"));
-            song.setAlbum(resultSet.getString("album"));
-            song.setArtist(resultSet.getString("artist"));
-            song.setSongDuration(resultSet.getDouble("songDuration"));
-            song.setSongPath(resultSet.getString("songPath"));
-        }
-        songs.add(song);
-
-        return songs;
-    }
-    public List<Song> searchByGenre(String songGenre) throws InvalidGenreException, SQLException {
-        if(songGenre==null){
-            throw new InvalidGenreException("Given Genre name is Invalid");
-        }
-        List<Song> songs = new ArrayList<>();
-        Song song=new Song();
-        String selectQuery = "select * from `jukebox`.`songs` where `songGenre` = ?;";
-        PreparedStatement statement = connection.prepareStatement(selectQuery);
-        statement.setString(1, songGenre);
-        ResultSet resultSet = statement.executeQuery();
-        while (resultSet.next()) {
-            song.setSongId(resultSet.getInt("songId"));
-            song.setSongName(resultSet.getString("songName"));
-            song.setSongGenre(resultSet.getString("songGenre"));
-            song.setAlbum(resultSet.getString("album"));
-            song.setArtist(resultSet.getString("artist"));
-            song.setSongDuration(resultSet.getDouble("songDuration"));
-            song.setSongPath(resultSet.getString("songPath"));
-        }
-        songs.add(song);
-
-        return songs;
-    }
-        public List<Song> searchByName(String songName) throws InvalidNameException, SQLException {
-        if(songName==null){
-            throw new InvalidNameException("Given Song name is Invalid");
-
-        }
-            List<Song> songs = new ArrayList<>();
-            Song song=new Song();
-            String selectQuery = "select * from `jukebox`.`songs` where `songName` = ?;";
-            PreparedStatement statement = connection.prepareStatement(selectQuery);
-            statement.setString(1, songName);
+        try(PreparedStatement statement = connection.prepareStatement(selectQuery)) {
+            statement.setString(1, artist);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 song.setSongId(resultSet.getInt("songId"));
@@ -135,6 +91,62 @@ public class SongRepository {
                 song.setSongPath(resultSet.getString("songPath"));
             }
             songs.add(song);
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }
+
+        return songs;
+    }
+    public List<Song> searchByGenre(String songGenre) throws InvalidGenreException, SQLException {
+        if(songGenre==null){
+            throw new InvalidGenreException("Given Genre name is Invalid");
+        }
+        List<Song> songs = new ArrayList<>();
+        Song song=new Song();
+        String selectQuery = "select * from `jukebox`.`songs` where `songGenre` = ?;";
+        try(PreparedStatement statement = connection.prepareStatement(selectQuery)) {
+            statement.setString(1, songGenre);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                song.setSongId(resultSet.getInt("songId"));
+                song.setSongName(resultSet.getString("songName"));
+                song.setSongGenre(resultSet.getString("songGenre"));
+                song.setAlbum(resultSet.getString("album"));
+                song.setArtist(resultSet.getString("artist"));
+                song.setSongDuration(resultSet.getDouble("songDuration"));
+                song.setSongPath(resultSet.getString("songPath"));
+            }
+            songs.add(song);
+        }catch(Exception exception){
+            exception.printStackTrace();
+        }
+
+        return songs;
+    }
+        public List<Song> searchByName(String songName) throws InvalidNameException, SQLException {
+        if(songName==null){
+            throw new InvalidNameException("Given Song name is Invalid");
+
+        }
+            List<Song> songs = new ArrayList<>();
+            Song song=new Song();
+            String selectQuery = "select * from `jukebox`.`songs` where `songName` = ?;";
+            try(PreparedStatement statement = connection.prepareStatement(selectQuery)) {
+                statement.setString(1, songName);
+                ResultSet resultSet = statement.executeQuery();
+                while (resultSet.next()) {
+                    song.setSongId(resultSet.getInt("songId"));
+                    song.setSongName(resultSet.getString("songName"));
+                    song.setSongGenre(resultSet.getString("songGenre"));
+                    song.setAlbum(resultSet.getString("album"));
+                    song.setArtist(resultSet.getString("artist"));
+                    song.setSongDuration(resultSet.getDouble("songDuration"));
+                    song.setSongPath(resultSet.getString("songPath"));
+                }
+                songs.add(song);
+            }catch (Exception exception){
+                exception.printStackTrace();
+            }
 
         return songs;
     }
