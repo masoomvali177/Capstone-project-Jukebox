@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="test cases for search by artist method">
+    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="test cases for search by name method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Jukeboxtest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Jukeboxtest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/PlayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/PlayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/model/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/JukeboxService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/service/JukeboxService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +61,7 @@
       <recent name="C:\Users\masoo\IdeaProjects\Capstone-project-Jukebox\src\main\resources\songs" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Jukeboxtest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.niit.jdp.Main" />
       <module name="Capstone-project-Jukebox" />
@@ -114,10 +116,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.Jukeboxtest" />
         <item itemvalue="JUnit.Jukeboxtest.displayAllSongsByNameFailure" />
         <item itemvalue="JUnit.Jukeboxtest.displayAllSongsByNameSuccess" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.Jukeboxtest.displayAllSongsByArtistfailure" />
       </list>
     </recent_temporary>
@@ -299,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670057694025</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="test cases for search by name method">
+      <created>1670058222927</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1670058222927</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -314,7 +323,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="changed version 19 to 11, and added my sql dependency" />
     <MESSAGE value="created song class" />
     <MESSAGE value="created playList class in model package" />
     <MESSAGE value="added attributes in Songs" />
@@ -339,6 +347,7 @@
     <MESSAGE value="added stop method in jukebox service" />
     <MESSAGE value="test cases for displaying all songs" />
     <MESSAGE value="test cases for search by artist method" />
-    <option name="LAST_COMMIT_MESSAGE" value="test cases for search by artist method" />
+    <MESSAGE value="test cases for search by name method" />
+    <option name="LAST_COMMIT_MESSAGE" value="test cases for search by name method" />
   </component>
 </project>

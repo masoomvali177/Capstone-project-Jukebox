@@ -12,6 +12,8 @@ import com.niit.jdp.service.JukeboxService;
 import java.sql.SQLException;
 import java.util.*;
 
+import static java.lang.System.exit;
+
 public class Main {
     public static void main(String[] args) throws SQLException, ClassNotFoundException, InvalidNameException, InvalidGenreException, InvalidArtistException {
         Scanner scanner = new Scanner(System.in);
@@ -60,6 +62,7 @@ public class Main {
                     case 4:
                         System.out.println("\n=============================================");
                         System.out.println("All songs");
+                        System.out.println(String.format("%s\t%-25s\t\t%-15s\t%-25s\t%-25s\t%-25s","SONG ID","SONG NAME","SONG DURATION","SONG GENRE","ARTIST","ALBUM"));
                         songRepository.displayAllSongs().forEach(System.out::println);
                         System.out.println("\n=============================================");
                         break;
@@ -75,6 +78,7 @@ public class Main {
                         break;
                     case 7:
                         System.out.println("Exiting\n");
+                        exit(0);
                         break;
                     default:
                         System.out.println("Invalid choice");
@@ -93,7 +97,7 @@ public class Main {
         System.out.println("PlayList Operations");
         System.out.println("======================");
         do {
-            System.out.println("1 Create a plaList");
+            System.out.println("1 Create a playList");
             System.out.println("2 Add songs to playlist");
             System.out.println("3 view the songs in given playlist");
             System.out.println("4 exit");
@@ -160,19 +164,27 @@ public class Main {
         int playlistIdToGetSongsFrom = scanner.nextInt();
         List<Song> songsFromPlaylist = playlistRepository.getSongsFromPlaylist(playlistIdToGetSongsFrom);
         Iterator<Song> iterator=songsFromPlaylist.iterator();
+        int flag=0;
         while (iterator.hasNext()){
+            if(flag==1){
+                break;
+            }
             System.out.println("1 play");
             System.out.println("2 stop");
+            System.out.println("3 return to main method");
             option=scanner.nextInt();
             switch (option)
             {
                 case 1:
-                    System.out.println(iterator.next());
+                      // dosti,x=playlist
                     jukeboxService.play(iterator.next().getSongPath());
                     break;
                 case 2:
-                    System.out.println("Song has stoped");
+                    System.out.println("Song has stopped");
                     jukeboxService.stop();
+                    break;
+                case 3:
+                    flag=1;
                     break;
                 default:
                     System.out.println("enter valid Input");

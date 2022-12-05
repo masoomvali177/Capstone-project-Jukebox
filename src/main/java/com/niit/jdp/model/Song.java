@@ -97,17 +97,11 @@ public class Song {
         this.songPath = songPath;
     }
 
+
+
     @Override
     public String toString() {
-        return "Song{" +
-                "songId=" + songId +
-                ", songName='" + songName + '\'' +
-                ", artist='" + artist + '\'' +
-                ", songGenre='" + songGenre + '\'' +
-                ", album='" + album + '\'' +
-                ", songDuration=" + songDuration +
-                ", songPath='" + songPath + '\'' +
-                '}';
+        return String.format("%s\t\t%-30s\t%-15s\t%-25s\t%-25s\t%-25s",songId,songName,songDuration,songGenre,artist,album);
     }
 
     @Override

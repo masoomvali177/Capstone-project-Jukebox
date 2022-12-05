@@ -49,10 +49,7 @@ public class PlayList {
 
     @Override
     public String toString() {
-        return "PlayList{" +
-                "id=" + playlistId +
-                ", name='" + playlistName + '\'' +
-                '}';
+        return String.format("%s\t%-25s",playlistId,playlistName);
     }
 
     @Override

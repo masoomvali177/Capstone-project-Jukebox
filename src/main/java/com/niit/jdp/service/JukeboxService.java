@@ -22,19 +22,15 @@ public class JukeboxService {
             clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.start();
-            System.out.println("2 stop");
             int stop=scanner.nextInt();
             if(stop==2)
             {
                 stop();
                 System.out.println("Song has stopped");
             }
-            long songLength = clip.getMicrosecondLength() / 10000L;
-            Thread.sleep(songLength);
+
         } catch (UnsupportedAudioFileException | IOException | LineUnavailableException exception) {
             exception.printStackTrace();
-        } catch (InterruptedException exception) {
-            System.err.println("The song was interrupted in between");
         }
     }
 
@@ -46,5 +42,6 @@ public class JukeboxService {
             throw new RuntimeException(e);
         }
     }
+
 
 }
