@@ -14,6 +14,19 @@ public class PlayList {
     private int playlistId;
     private String playlistName;
     private List<Song> songs;
+    public PlayList() {
+    }
+
+    public PlayList(int playlistId, String playlistName) {
+        this.playlistId = playlistId;
+        this.playlistName = playlistName;
+    }
+
+    public PlayList(int playlistId, String playlistName, List<Song> songs) {
+        this.playlistId = playlistId;
+        this.playlistName = playlistName;
+        this.songs = songs;
+    }
 
     public List<Song> getSongs() {
         return songs;
@@ -23,15 +36,6 @@ public class PlayList {
     public void setSongs(List<Song> songs) {
         this.songs = songs;
     }
-
-    public PlayList() {
-    }
-
-    public PlayList(int playlistId, String playlistName) {
-        this.playlistId = playlistId;
-        this.playlistName = playlistName;
-    }
-
     public int getPlaylistId() {
         return playlistId;
     }

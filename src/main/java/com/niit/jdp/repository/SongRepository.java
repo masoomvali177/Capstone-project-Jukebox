@@ -72,9 +72,7 @@ public class SongRepository {
         return song;
     }
     public List<Song> searchByArtist(String artist) throws InvalidArtistException, SQLException {
-        if(artist==null){
-            throw new InvalidArtistException("Given Artist name is Invalid");
-        }
+
         List<Song> songs = new ArrayList<>();
         Song song=new Song();
         String selectQuery = "select * from `jukebox`.`songs` where `artist` = ?;";
@@ -89,8 +87,11 @@ public class SongRepository {
                 song.setArtist(resultSet.getString("artist"));
                 song.setSongDuration(resultSet.getDouble("songDuration"));
                 song.setSongPath(resultSet.getString("songPath"));
+                songs.add(song);
             }
-            songs.add(song);
+            if(songs.isEmpty()){
+                throw new InvalidArtistException("Given Artist name is Invalid");
+            }
         }catch (Exception exception){
             exception.printStackTrace();
         }
@@ -115,8 +116,12 @@ public class SongRepository {
                 song.setArtist(resultSet.getString("artist"));
                 song.setSongDuration(resultSet.getDouble("songDuration"));
                 song.setSongPath(resultSet.getString("songPath"));
+                songs.add(song);
             }
-            songs.add(song);
+
+            if(songs.isEmpty()){
+                throw new InvalidGenreException("Given Genre is Invalid");
+            }
         }catch(Exception exception){
             exception.printStackTrace();
         }
@@ -142,8 +147,11 @@ public class SongRepository {
                     song.setArtist(resultSet.getString("artist"));
                     song.setSongDuration(resultSet.getDouble("songDuration"));
                     song.setSongPath(resultSet.getString("songPath"));
+                    songs.add(song);
                 }
-                songs.add(song);
+                if(songs.isEmpty()){
+                    throw new InvalidNameException("Given Name is Invalid");
+                }
             }catch (Exception exception){
                 exception.printStackTrace();
             }

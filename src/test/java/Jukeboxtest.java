@@ -6,6 +6,7 @@
 
 import com.niit.jdp.exception.InvalidArtistException;
 import com.niit.jdp.exception.InvalidNameException;
+import com.niit.jdp.model.PlayList;
 import com.niit.jdp.model.Song;
 import com.niit.jdp.repository.PlayListRepository;
 import com.niit.jdp.repository.SongRepository;
@@ -101,6 +102,7 @@ public class Jukeboxtest {
         Assert.assertNotEquals(expectedOutput, actualOutput);
 
     }
+
     @Test
     public void displayAllSongsByNameSuccess() throws InvalidArtistException, SQLException, InvalidNameException {
         //act
@@ -131,7 +133,20 @@ public class Jukeboxtest {
         Assert.assertNotEquals(expectedOutput, actualOutput);
 
     }
+    @Test
+    public void getSongsFromPlaylistFailure() throws  SQLException, ClassNotFoundException {
+        //arrange
+        List<Song> actualOutput= playListRepository.getSongsFromPlaylist(3);
+        //assert
+        assertNotEquals(2,actualOutput.get(0).getSongId());
+    }
 
-
+    @Test
+    public void getSongsFromPlaylistSuccess() throws  SQLException, ClassNotFoundException {
+        //arrange
+        List<Song> actualOutput= playListRepository.getSongsFromPlaylist(3);
+        //assert
+        assertEquals(1,actualOutput.get(0).getSongId());
+    }
 
 }

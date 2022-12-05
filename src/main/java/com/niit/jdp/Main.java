@@ -42,6 +42,8 @@ public class Main {
                         System.out.println("\n=============================================");
                         System.out.println("Enter the Name Of Song");
                         String name = scanner.next();
+                        System.out.println(String.format("%s\t%-25s\t\t%-15s\t%-25s\t%-25s\t%-25s","SONG ID","SONG NAME","SONG DURATION","SONG GENRE","ARTIST","ALBUM"));
+                        System.out.println("===================================================================================================================");
                         songRepository.searchByName(name).forEach(System.out::println);
                         System.out.println("\n=============================================");
                         break;
@@ -49,6 +51,8 @@ public class Main {
                         System.out.println("\n=============================================");
                         System.out.println("Enter the Genre of Song");
                         String genre = scanner.next();
+                        System.out.println(String.format("%s\t%-25s\t\t%-15s\t%-25s\t%-25s\t%-25s","SONG ID","SONG NAME","SONG DURATION","SONG GENRE","ARTIST","ALBUM"));
+                        System.out.println("===================================================================================================================");
                         songRepository.searchByGenre(genre).forEach(System.out::println);
                         System.out.println("\n=============================================");
                         break;
@@ -56,6 +60,8 @@ public class Main {
                         System.out.println("\n=============================================");
                         System.out.println("Enter the Artist name of song");
                         String artist = scanner.next();
+                        System.out.println(String.format("%s\t%-25s\t\t%-15s\t%-25s\t%-25s\t%-25s","SONG ID","SONG NAME","SONG DURATION","SONG GENRE","ARTIST","ALBUM"));
+                        System.out.println("===================================================================================================================");
                         songRepository.searchByArtist(artist).forEach(System.out::println);
                         System.out.println("\n=============================================");
                         break;
@@ -63,8 +69,21 @@ public class Main {
                         System.out.println("\n=============================================");
                         System.out.println("All songs");
                         System.out.println(String.format("%s\t%-25s\t\t%-15s\t%-25s\t%-25s\t%-25s","SONG ID","SONG NAME","SONG DURATION","SONG GENRE","ARTIST","ALBUM"));
+                        System.out.println("============================================================================================================");
                         songRepository.displayAllSongs().forEach(System.out::println);
                         System.out.println("\n=============================================");
+                        System.out.println("Enter 1 to play song");
+                        System.out.println("enter 2 to goto main method");
+                        int number=scanner.nextInt();
+                        if(number==1){
+                            System.out.println("Enter the song id from above list");
+                            int songId=scanner.nextInt();
+                            Song song=songRepository.getSongById(songId);
+                            jukeboxService.play(song.getSongPath());
+                        }
+                        else{
+                            System.out.println("Going To Main Menu......");
+                        }
                         break;
                     case 5:
                         System.out.println("\n=============================================");
@@ -92,6 +111,7 @@ public class Main {
     public static void playListOperations() throws SQLException, ClassNotFoundException {
         Scanner scanner = new Scanner(System.in);
         PlayListRepository playlistRepository = new PlayListRepository();
+        SongRepository songRepository=new SongRepository();
         int option=0;
 
         System.out.println("PlayList Operations");
@@ -99,14 +119,14 @@ public class Main {
         do {
             System.out.println("1 Create a playList");
             System.out.println("2 Add songs to playlist");
-            System.out.println("3 view the songs in given playlist");
-            System.out.println("4 exit");
+            System.out.println("3 View the songs in given playlist");
+            System.out.println("4 Go To Main Menu");
             option=scanner.nextInt();
             scanner.nextLine();
             switch (option) {
                 case 1:
                     System.out.println("===============================");
-                    System.out.println("enter the name of the playlist to be created: ");
+                    System.out.println("Enter the name of the playlist to be created: ");
                     String playlistName = scanner.nextLine();
                     PlayList playlist = playlistRepository.createPlaylist(playlistName);
                     System.out.println("Your playlist has been created with id: " + playlist.getPlaylistId());
@@ -116,10 +136,17 @@ public class Main {
                 case 2:
                     System.out.println("================================");
                     //i have to add get id using name
-                    System.out.println("Enter the playlist id to add songs to: ");
+                    System.out.println(String.format("%s\t%-25s","IDS","NAMES"));
+                    System.out.println("============================");
                     playlistRepository.getAllPlayList().forEach(System.out::println);
+                    System.out.println("Enter the playlist id to add songs to: ");
                     int playlistId = scanner.nextInt();
                     scanner.nextLine();
+                    System.out.println("All songs");
+                    System.out.println(String.format("%s\t%-25s\t\t%-15s\t%-25s\t%-25s\t%-25s","SONG ID","SONG NAME","SONG DURATION","SONG GENRE","ARTIST","ALBUM"));
+                    System.out.println("============================================================================================================");
+                    songRepository.displayAllSongs().forEach(System.out::println);
+                    System.out.println("\n=============================================");
                     System.out.println("Enter the song ids to add to the playlist separated by comma: ");
                     String songIds = scanner.nextLine();
                     boolean songsAdded = playlistRepository.addSongsToPlayList(playlistId, songIds);
@@ -133,10 +160,13 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("================================");
+                    System.out.println(String.format("%s\t%-25s","IDS","NAMES"));
+                    System.out.println("============================");
                     playlistRepository.getAllPlayList().forEach(System.out::println);
                     System.out.println("Enter the playlist id to get songs from: ");
                     int playlistIdToGetSongsFrom = scanner.nextInt();
                     System.out.println(String.format("%s\t%-25s\t\t%-15s\t%-25s\t%-25s\t%-25s","SONG ID","SONG NAME","SONG DURATION","SONG GENRE","ARTIST","ALBUM"));
+                    System.out.println("=================================================================================================================");
                     List<Song> songsFromPlaylist = playlistRepository.getSongsFromPlaylist(playlistIdToGetSongsFrom);
                     for (Song song : songsFromPlaylist) {
 
@@ -146,7 +176,7 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("================================");
-                    System.out.println("Exiting");
+                    System.out.println("Going To Main Menu");
                     break;
                 default:
                     System.out.println("Invalid Option");
@@ -163,6 +193,11 @@ public class Main {
         PlayListRepository playlistRepository=new PlayListRepository();
         int option=0;
         System.out.println("Jukebox Operations");
+        System.out.println("All PlayLists");
+        System.out.println(String.format("%s\t%-25s","IDS","NAMES"));
+        System.out.println("============================");
+        playlistRepository.getAllPlayList().forEach(System.out::println);
+        System.out.println("==============================");
         System.out.println("Enter the playlist id to play songs songs from: ");
         int playlistIdToGetSongsFrom = scanner.nextInt();
         List<Song> songsFromPlaylist = playlistRepository.getSongsFromPlaylist(playlistIdToGetSongsFrom);
