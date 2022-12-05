@@ -53,7 +53,7 @@ public class SongRepository {
         return songs;
     }
     public Song getSongById(int songId) throws SQLException {
-        Song song = new Song();
+        Song song=new Song();
         String selectQuery = "select * from `jukebox`.`songs` where `songId` = ?;";
         try(PreparedStatement statement = connection.prepareStatement(selectQuery)) {
             statement.setInt(1, songId);
@@ -78,12 +78,12 @@ public class SongRepository {
     public List<Song> searchByArtist(String artist) throws InvalidArtistException, SQLException {
 
         List<Song> songs = new ArrayList<>();
-        Song song=new Song();
         String selectQuery = "select * from `jukebox`.`songs` where `artist` = ?;";
         try(PreparedStatement statement = connection.prepareStatement(selectQuery)) {
             statement.setString(1, artist);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
+                Song song=new Song();
                 song.setSongId(resultSet.getInt("songId"));
                 song.setSongName(resultSet.getString("songName"));
                 song.setSongGenre(resultSet.getString("songGenre"));
@@ -107,12 +107,12 @@ public class SongRepository {
             throw new InvalidGenreException("Given Genre name is Invalid");
         }
         List<Song> songs = new ArrayList<>();
-        Song song=new Song();
         String selectQuery = "select * from `jukebox`.`songs` where `songGenre` = ?;";
         try(PreparedStatement statement = connection.prepareStatement(selectQuery)) {
             statement.setString(1, songGenre);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()) {
+                Song song=new Song();
                 song.setSongId(resultSet.getInt("songId"));
                 song.setSongName(resultSet.getString("songName"));
                 song.setSongGenre(resultSet.getString("songGenre"));
@@ -138,12 +138,13 @@ public class SongRepository {
 
         }
             List<Song> songs = new ArrayList<>();
-            Song song=new Song();
+
             String selectQuery = "select * from `jukebox`.`songs` where `songName` = ?;";
             try(PreparedStatement statement = connection.prepareStatement(selectQuery)) {
                 statement.setString(1, songName);
                 ResultSet resultSet = statement.executeQuery();
                 while (resultSet.next()) {
+                    Song song=new Song();
                     song.setSongId(resultSet.getInt("songId"));
                     song.setSongName(resultSet.getString("songName"));
                     song.setSongGenre(resultSet.getString("songGenre"));

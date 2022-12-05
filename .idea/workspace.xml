@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="added test cases for get songs from playlist">
+    <list default="true" id="139d7799-4afb-453b-93bc-dc77cda27b01" name="Changes" comment="added test cases for get all playlist  from playlist table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PlayListRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PlayListRepositoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/niit/jdp/repository/SongRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,16 +83,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayListRepositoryTest.displayAllPlaylist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Capstone-project-Jukebox" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PlayListRepositoryTest" />
-      <option name="METHOD_NAME" value="displayAllPlaylist" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PlayListRepositoryTest.displayAllPlaylistFailure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Capstone-project-Jukebox" />
       <option name="PACKAGE_NAME" value="" />
@@ -102,11 +93,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SongRepositoryTest.getSongsFromPlaylistFailure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SongRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Capstone-project-Jukebox" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SongRepositoryTest" />
-      <option name="METHOD_NAME" value="getSongsFromPlaylistFailure" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SongRepositoryTest.displayAllSongsByNameSuccess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Capstone-project-Jukebox" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SongRepositoryTest" />
+      <option name="METHOD_NAME" value="displayAllSongsByNameSuccess" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -115,10 +115,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.PlayListRepositoryTest" />
-        <item itemvalue="JUnit.PlayListRepositoryTest.displayAllPlaylistFailure" />
-        <item itemvalue="JUnit.PlayListRepositoryTest.displayAllPlaylist" />
+        <item itemvalue="JUnit.SongRepositoryTest" />
+        <item itemvalue="JUnit.SongRepositoryTest.displayAllSongsByNameSuccess" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.SongRepositoryTest.getSongsFromPlaylistFailure" />
+        <item itemvalue="JUnit.PlayListRepositoryTest.displayAllPlaylistFailure" />
       </list>
     </recent_temporary>
   </component>
@@ -369,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670253345654</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="added test cases for get all playlist  from playlist table">
+      <created>1670256687483</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1670256687483</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -384,7 +391,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added junit dependency in pom.xml" />
     <MESSAGE value="create constructor in Song.java" />
     <MESSAGE value="create getters and setters in Song.java" />
     <MESSAGE value="created toString in Song.java" />
@@ -409,6 +415,7 @@
     <MESSAGE value="added exception for each method in song repository" />
     <MESSAGE value="added sql file to intellij" />
     <MESSAGE value="added test cases for get songs from playlist" />
-    <option name="LAST_COMMIT_MESSAGE" value="added test cases for get songs from playlist" />
+    <MESSAGE value="added test cases for get all playlist  from playlist table" />
+    <option name="LAST_COMMIT_MESSAGE" value="added test cases for get all playlist  from playlist table" />
   </component>
 </project>

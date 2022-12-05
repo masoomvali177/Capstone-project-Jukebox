@@ -40,7 +40,7 @@ public class PlayListRepositoryTest {
     @Test
     public void displayAllPlaylist() throws SQLException {
         List<PlayList> playlists = playListRepository.getAllPlayList();
-        Assertions.assertEquals(22, playlists.size());
+        Assertions.assertEquals(23, playlists.size());
     }
 
     @Test
