@@ -97,7 +97,18 @@ public class PlayListRepository {
         List<PlayList> playLists=new ArrayList<>();
         String query="select * from `jukebox`.`playlist`;";
         try(Statement statement=connection.createStatement()){
+            ResultSet resultSet = statement.executeQuery(query);
+            while (resultSet.next()){
+                int playlistId=resultSet.getInt("playlistId");
+                String playlistName=resultSet.getString("playlistname");
+                String songsIds=resultSet.getString("songIds");
+                PlayList playList=new PlayList(playlistId,playlistName);
+                playLists.add(playList);
+            }
 
+        }
+        catch(Exception exception){
+            exception.printStackTrace();
         }
         return playLists;
     }

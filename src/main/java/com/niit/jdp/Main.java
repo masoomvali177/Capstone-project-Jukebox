@@ -117,6 +117,7 @@ public class Main {
                     System.out.println("================================");
                     //i have to add get id using name
                     System.out.println("Enter the playlist id to add songs to: ");
+                    playlistRepository.getAllPlayList().forEach(System.out::println);
                     int playlistId = scanner.nextInt();
                     scanner.nextLine();
                     System.out.println("Enter the song ids to add to the playlist separated by comma: ");
@@ -132,6 +133,7 @@ public class Main {
                     break;
                 case 3:
                     System.out.println("================================");
+                    playlistRepository.getAllPlayList().forEach(System.out::println);
                     System.out.println("Enter the playlist id to get songs from: ");
                     int playlistIdToGetSongsFrom = scanner.nextInt();
                     System.out.println(String.format("%s\t%-25s\t\t%-15s\t%-25s\t%-25s\t%-25s","SONG ID","SONG NAME","SONG DURATION","SONG GENRE","ARTIST","ALBUM"));
